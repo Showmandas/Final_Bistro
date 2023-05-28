@@ -8,8 +8,8 @@ import Swal from 'sweetalert2'
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
     const { signIn } = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation();
+    const navigate = useNavigate();
+    const location = useLocation();
   const captchaRef=useRef(null)
     useEffect(()=>{
         loadCaptchaEnginge(6)
@@ -33,7 +33,7 @@ const Login = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                     }
                 });
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
             })
     }
     const handleValidateCaptcha=()=>{
@@ -67,7 +67,7 @@ setDisabled(true)
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" name="enter password" placeholder="password" className="input input-bordered" />
+                        <input type="password" name="password" placeholder="password" className="input input-bordered" />
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
@@ -80,7 +80,7 @@ setDisabled(true)
                         <button className='btn btn-outline btn-xs mt-2' onClick={handleValidateCaptcha}>Validate</button>
                     </div>
                     <div className="form-control mt-6">
-                        <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
+                        <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
                     </div>
                 </form>
                 <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>

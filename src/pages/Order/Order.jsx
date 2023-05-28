@@ -13,6 +13,11 @@ const Order = () => {
     const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks'];
     const { category } = useParams();
     const initialIndex = categories.indexOf(category);
+    const desserts=menu.filter(item=>item.category==='dessert')
+    const soup=menu.filter(item=>item.category==='soup')
+    const salad=menu.filter(item=>item.category==='salad')
+    const pizza=menu.filter(item=>item.category==='pizza')
+    const drinks=menu.filter(item=>item.category==='drinks')
 
   return (
     <div>
